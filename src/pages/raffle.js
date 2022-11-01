@@ -5,7 +5,10 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { CLIENT_ID, DOMAIN } from "../config/config";
 import {
+  FormControl,
+  MenuItem,
   Modal,
+  Select,
 } from "@mui/material";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import box1 from "../assets/box/box1.png";
@@ -17,6 +20,8 @@ import box6 from "../assets/box/box6.png";
 import RecentHistory from './history';
 import loadingGif from "../assets/processing.gif";
 import { createNotify } from "../utils/service";
+import { AptosClient, AptosAccount, CoinClient, FaucetClient } from "aptos";
+import { NODE_URL, FAUCET_URL } from "../config/section";;
 
 const style = {
   position: "absolute",
@@ -52,7 +57,13 @@ const loadingStyle = {
   alignItems: "center",
 };
 
-export default function Raffles({wallet}) {
+export default function Raffles({ address }) {
+
+  const client = new AptosClient(NODE_URL);
+  const coinClient = new CoinClient(client);
+  let enc = new TextEncoder();
+  const admin_account = new AptosAccount(enc.encode("0xeb8f1dd138b30fd22726a901537e80acb23bc9a897a1c8552727dc5e1d28c32a"), "0x54e6a173cc3cff14740136277d1a4586d0fd372d368e49b675fe9889b00c21aa");
+  const user_account = new AptosAccount(undefined, "0x4d9b73547ed4a62ebcda82df09c7ac5d7aef02b854415b951e3854bd3aa8d412");
   
   const disData = JSON.parse(localStorage.getItem("discordUser"));
   const [openModal, setOpenModal] = useState(false);
@@ -80,6 +91,7 @@ export default function Raffles({wallet}) {
     }
   };
 
+  const [wallet, setWallet] = useState(undefined);
   const [processing, setProcessing] = useState(false);
   const handleOpenProcessing = () => setProcessing(true);
   const handleprocessing = () => setProcessing(false);
@@ -91,8 +103,7 @@ export default function Raffles({wallet}) {
       createNotify('error', 'Please Connect Wallet!');
     } else {
       handleOpenProcessing(true);
-      var wallet = await window.martian.connect();
-      var transactions = await window.martian.getAccountResources(wallet.address);
+      var transactions = await window.martian.getAccountResources(wallet);
       console.log(transactions,'transactions----')
       var curPrice = 0;
       if(transactions[1].data.coin){
@@ -101,15 +112,36 @@ export default function Raffles({wallet}) {
         curPrice = transactions[0].data.coin.value;
       }
       if (curPrice >= betAmount * 10 ** 8) {
-        console.log(betAmount,'3456789')
+        let txnHash = await coinClient.transfer(admin_account, user_account, 1_000, { gasUnitPrice: BigInt(100) }); // <:!:section_5
+        let result = await client.waitForTransaction(txnHash);
+        console.log(result, 'result');
+        handleOpenProcessing(false);
+
+        // if (bettype === 1) {
+        //   var rnd = Math.random() * 100;
+        //   console.log(rnd,'3456789')
+        // } else {
+        //   console.log('bettype 2')
+        // }
       } else {
         createNotify('error', 'Not enough Coin!');
       }
     }
   }
+
+  const [bettype, setBetType] = useState(1);
+
+  const changeBettype = (event) => {
+    setBetType(event.target.value);
+  };
+
   useEffect(() => {
     checkData();
   }, []);
+
+  useEffect(() => {
+    setWallet(address);
+  }, [address]);
 
   return (
     <Box sx={{ px: "50px" }} className="px10">
@@ -176,9 +208,21 @@ export default function Raffles({wallet}) {
               <h1>
                 Muliplier
               </h1>
-              <Button variant="outlined" endIcon={<KeyboardArrowDownIcon />} sx={{height:'50px',fontSize:'25px',border:'3px solid white',borderRadius:'20px',color:'white',bgcolor:'#fb00ff !important'}}>
-                10x or Nothing
-              </Button>
+              <Box sx={{p:'0px',m:'0px'}}>
+                <FormControl fullWidth sx={{border:'3px solid white',borderRadius:'20px',color:'white',bgcolor:'#fb00ff !important'}}>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={bettype}
+                    onChange={changeBettype}
+                    sx={{ fontSize: '25px' }}
+                    className='betType'
+                  >
+                    <MenuItem value={1}>10x or Nothing</MenuItem>
+                    <MenuItem value={2}>50/50</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
             </Box>
           </Box>
           <Box>

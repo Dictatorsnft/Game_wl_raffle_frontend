@@ -16,16 +16,21 @@ globalThis.Buffer = Buffer;
 
 export default function App() {
   const [wallet, setWallet] = useState(undefined);
+
+  useEffect(() => {
+    console.log(wallet)
+  },[wallet])
+
   return (
     <Router>
       <ToastContainer />
       <Routes>
         <Route element={<Layout getWallet={setWallet} />}>
           <Route path="/auth/callback" element={<Callback />} />
-          <Route path="/" element={<Raffle wallet={wallet} />} />
+          <Route path="/" element={<Raffle address={wallet} />} />
           <Route
             path="/raffles"
-            element={<Raffle wallet={wallet}/>}
+            element={<Raffle address={wallet}/>}
           />
           {/* <Route
             path="/coinflip"
