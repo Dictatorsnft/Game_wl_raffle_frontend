@@ -39,12 +39,16 @@ export default function MainLayout({ getWallet }) {
   const [anchorElUser2, setAnchorElUser2] = useState(null);
   const [anchorElUser4, setAnchorElUser4] = useState(null);
   const ConnectWallet = async () => {
-    try {
-      var wallet = await window.martian.connect();
-      setAccount(wallet.address);
-      getWallet(wallet.address);
-    } catch (error) {
-      toast.error(error.message);
+    if ("martian" in window) {
+      try {
+        var wallet = await window.martian.connect();
+        setAccount(wallet.address);
+        getWallet(wallet.address);
+      } catch (error) {
+        createNotify('error',error.message)
+      }
+    } else {
+      window.open("https://www.martianwallet.xyz/", "_blank");
     }
   };
 

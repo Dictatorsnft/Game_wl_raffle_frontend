@@ -35,7 +35,7 @@ export default function MediaControlCard() {
                         <Box sx={{ display: 'flex', flexDirection: 'column',justifyContent:'center',width:'100%' }}>
                             <CardContent sx={{ flex: '1 auto',display:'flex',flexDirection:'column',justifyContent:'center' }}>
                             <Typography component="div" variant="h5">
-                                AWW...fT5 opened 1 SOL and won 1 SOL
+                                AWW...fT5 opened 1 APT and won 1 APT
                             </Typography>
                             <Typography variant="subtitle1" color="text.secondary" component="div" sx={{textAlign:'right'}}>
                                 2mins ago
@@ -57,7 +57,7 @@ export default function MediaControlCard() {
                         <Box sx={{ display: 'flex', flexDirection: 'column',justifyContent:'center',width:'100%' }}>
                             <CardContent sx={{ flex: '1 auto',display:'flex',flexDirection:'column',justifyContent:'center' }}>
                             <Typography component="div" variant="h5">
-                                AWW...fT5 opened 1 SOL and won 1 SOL
+                                AWW...fT5 opened 1 APT and won 1 APT
                             </Typography>
                             <Typography variant="subtitle1" color="text.secondary" component="div" sx={{textAlign:'right'}}>
                                 2mins ago
@@ -79,7 +79,7 @@ export default function MediaControlCard() {
                         <Box sx={{ display: 'flex', flexDirection: 'column',justifyContent:'center',width:'100%' }}>
                             <CardContent sx={{ flex: '1 auto',display:'flex',flexDirection:'column',justifyContent:'center' }}>
                             <Typography component="div" variant="h5">
-                                AWW...fT5 opened 1 SOL and won 1 SOL
+                                AWW...fT5 opened 1 APT and won 1 APT
                             </Typography>
                             <Typography variant="subtitle1" color="text.secondary" component="div" sx={{textAlign:'right'}}>
                                 2mins ago
@@ -101,7 +101,7 @@ export default function MediaControlCard() {
                         <Box sx={{ display: 'flex', flexDirection: 'column',justifyContent:'center',width:'100%' }}>
                             <CardContent sx={{ flex: '1 auto',display:'flex',flexDirection:'column',justifyContent:'center' }}>
                             <Typography component="div" variant="h5">
-                                AWW...fT5 opened 1 SOL and won 1 SOL
+                                AWW...fT5 opened 1 APT and won 1 APT
                             </Typography>
                             <Typography variant="subtitle1" color="text.secondary" component="div" sx={{textAlign:'right'}}>
                                 2mins ago
@@ -123,7 +123,7 @@ export default function MediaControlCard() {
                         <Box sx={{ display: 'flex', flexDirection: 'column',justifyContent:'center',width:'100%' }}>
                             <CardContent sx={{ flex: '1 auto',display:'flex',flexDirection:'column',justifyContent:'center' }}>
                             <Typography component="div" variant="h5">
-                                AWW...fT5 opened 1 SOL and won 1 SOL
+                                AWW...fT5 opened 1 APT and won 1 APT
                             </Typography>
                             <Typography variant="subtitle1" color="text.secondary" component="div" sx={{textAlign:'right'}}>
                                 2mins ago
@@ -145,7 +145,7 @@ export default function MediaControlCard() {
                         <Box sx={{ display: 'flex', flexDirection: 'column',justifyContent:'center',width:'100%' }}>
                             <CardContent sx={{ flex: '1 auto',display:'flex',flexDirection:'column',justifyContent:'center' }}>
                             <Typography component="div" variant="h5">
-                                AWW...fT5 opened 1 SOL and won 1 SOL
+                                AWW...fT5 opened 1 APT and won 1 APT
                             </Typography>
                             <Typography variant="subtitle1" color="text.secondary" component="div" sx={{textAlign:'right'}}>
                                 2mins ago
@@ -167,7 +167,7 @@ export default function MediaControlCard() {
                         <Box sx={{ display: 'flex', flexDirection: 'column',justifyContent:'center',width:'100%' }}>
                             <CardContent sx={{ flex: '1 auto',display:'flex',flexDirection:'column',justifyContent:'center' }}>
                             <Typography component="div" variant="h5">
-                                AWW...fT5 opened 1 SOL and won 1 SOL
+                                AWW...fT5 opened 1 APT and won 1 APT
                             </Typography>
                             <Typography variant="subtitle1" color="text.secondary" component="div" sx={{textAlign:'right'}}>
                                 2mins ago

@@ -33,7 +33,7 @@ export default function Dashboard() {
         }
       );
       if (data.scope !== OAuthScope) {
-        createNotify(
+        createNotify('error',
           `Expected scope "${OAuthScope}" but received scope "${data.scope}"`
         );
       }
@@ -46,7 +46,7 @@ export default function Dashboard() {
         }
       );
       if (user.email === null) {
-        createNotify(
+        createNotify('error',
           "Please verify your Discord's account E-mail before logging in."
         );
       }

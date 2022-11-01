@@ -18,7 +18,7 @@ export default function App() {
   const [wallet, setWallet] = useState(undefined);
 
   useEffect(() => {
-    console.log(wallet)
+    console.log(wallet);
   },[wallet])
 
   return (

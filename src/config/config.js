@@ -57,14 +57,7 @@ export const AdminUsers = [
   "944835356350644296",
   "1020567653519208479",
 ];
-// export const SERVER_URL = "http://192.168.114.33:2022/api";
-// export const DOMAIN = "http://192.168.114.33:3000/";
-export const SERVER_URL = "https://degentown.nearverselabs.com/api";
-export const DOMAIN = "https://degentown.nearverselabs.com/";
-export const CLIENT_ID = "1030826114182025296";
-export const CLIENT_SECRET = "0wCUKaHhWDruFIDMFCUdzqXdTRgl4Ph1";
-// export const COOKIE_SECRET = "ww6e9dyJ8z5q1WJ3tRqU88kuRsx0EYDQ"
-// export const CRYPT_KEYS = [
-//     'wiJtAH+FT9ARLoQUi0akXCyTBBunWDo1HQKOLkcdkK4=',
-//     'yeGhlXraAijCGisxG862fg=='
-// ]
+export const SERVER_URL = "https://rafflik.aphub.xyz/api";
+export const DOMAIN = "https://rafflik.aphub.xyz/";
+export const CLIENT_ID = "1036990971130421248";
+export const CLIENT_SECRET = "_hR5cOwmvYNwLVLjsnwcMeT5c9WBwu2q";

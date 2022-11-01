@@ -112,17 +112,11 @@ export default function Raffles({ address }) {
         curPrice = transactions[0].data.coin.value;
       }
       if (curPrice >= betAmount * 10 ** 8) {
-        let txnHash = await coinClient.transfer(admin_account, user_account, 1_000, { gasUnitPrice: BigInt(100) }); // <:!:section_5
-        let result = await client.waitForTransaction(txnHash);
-        console.log(result, 'result');
+        createNotify('success','You Won!')
+        // let txnHash = await coinClient.transfer(admin_account, user_account, 1_000, { gasUnitPrice: BigInt(100) }); // <:!:section_5
+        // let result = await client.waitForTransaction(txnHash);
+        // console.log(result, 'result');
         handleOpenProcessing(false);
-
-        // if (bettype === 1) {
-        //   var rnd = Math.random() * 100;
-        //   console.log(rnd,'3456789')
-        // } else {
-        //   console.log('bettype 2')
-        // }
       } else {
         createNotify('error', 'Not enough Coin!');
       }
@@ -277,7 +271,7 @@ export default function Raffles({ address }) {
                 <Box sx={{border:'1px solid white',borderRadius:'12px',bgcolor:'rgb(144 202 249 / 50%)'}}>
                   <img src={box4} style={{width:'100%',borderRadius:'12px'}} />
                   <Box sx={{display:'flex',justifyContent:'center'}}>
-                    <Button sx={{background:'#512da8 !important',textAlign:'center',px:'20px',color:'white',fontSize:'20px'}}>Volacnp</Button>
+                    <Button sx={{background:'#512da8 !important',textAlign:'center',px:'20px',color:'white',fontSize:'20px'}}>Toxic Box</Button>
                   </Box>
                   <Box sx={{display:'flex',justifyContent:'center'}}>
                     <Typography sx={{fontSize:'30px'}}>Price : $2.5 APT</Typography>
@@ -309,7 +303,7 @@ export default function Raffles({ address }) {
                 <Box sx={{border:'1px solid white',borderRadius:'12px',bgcolor:'rgb(144 202 249 / 50%)'}}>
                   <img src={box6} style={{width:'100%',borderRadius:'12px'}} />
                   <Box sx={{display:'flex',justifyContent:'center'}}>
-                    <Button sx={{background:'#512da8 !important',textAlign:'center',px:'20px',color:'white',fontSize:'20px'}}>box</Button>
+                    <Button sx={{background:'#512da8 !important',textAlign:'center',px:'20px',color:'white',fontSize:'20px'}}>Monster Box</Button>
                   </Box>
                   <Box sx={{display:'flex',justifyContent:'center'}}>
                     <Typography sx={{fontSize:'30px'}}>Price : $10 APT</Typography>
